@@ -81,7 +81,7 @@ class Usms
      * 
      * Send single / group SMS
      */
-    public function send_sms($endpoint, $api_token, $sender_id, $phones, $message)
+    public function send_single_group_sms($endpoint, $api_token, $sender_id, $phones, $message)
     {
         $single_phone = $phones;
         $phones = explode(',', $phones);
@@ -110,7 +110,7 @@ class Usms
      *
      * Send single
      */
-    public function sendSingle($endpoint, $api_token, $sender_id, $phone, $message)
+    public function send_sms($endpoint, $api_token, $sender_id, $phone, $message)
     {
         $this->send_server_response($endpoint, $api_token, $sender_id, $phone, $message, 'post');
     }
